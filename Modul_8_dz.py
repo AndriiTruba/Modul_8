@@ -27,7 +27,7 @@ def get_birthdays_per_week(users):
     new_dict = {}
     start, finish = period_birthdays_per_week(input(f'Введіть дату понеділка потрібного тижня в форматі РРРР-ММ-ДД: '))
     if start.weekday() != 5:
-        return None
+        return get_birthdays_per_week(users)
     for birthday_boy in users:
         for name, birthday in birthday_boy.items():
             birthday = datetime.strptime(birthday, '%Y-%m-%d')
